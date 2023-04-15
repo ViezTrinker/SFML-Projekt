@@ -2,23 +2,23 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works fine!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::White);
+	sf::RenderWindow window(sf::VideoMode(640, 480), "First Window!");
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
+	while (window.isOpen())
+	{
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+			{
+				// Close window button clicked
+				window.close();
+			}
+		}
 
-        window.clear();
-        window.draw(shape);
-        window.display();
-    }
+		window.clear(sf::Color::Black);
+		// Draw here
+		window.display();
 
-    return 0;
+	}
 }
