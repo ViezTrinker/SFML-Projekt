@@ -2,7 +2,14 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(640, 480), "First Window!");
+	sf::RenderWindow window(sf::VideoMode(640, 480), "Rendering the rectangle");
+
+	// Creating our shape
+	sf::RectangleShape rectangle(sf::Vector2f(128.0f, 128.0f));
+	rectangle.setFillColor(sf::Color::Red);
+	rectangle.setPosition(320, 240);
+	rectangle.setOrigin(rectangle.getSize().x / 2, rectangle.getSize().y / 2);
+
 
 	while (window.isOpen())
 	{
@@ -17,7 +24,7 @@ int main()
 		}
 
 		window.clear(sf::Color::Black);
-		// Draw here
+		window.draw(rectangle);
 		window.display();
 
 	}
