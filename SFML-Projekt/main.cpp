@@ -7,9 +7,10 @@ int main()
 	while (!game.GetWindow()->IsDone())
 	{
 		// Game Loop
-		//game.HandleInput();
+		// game.HandleInput();
 		game.Update();
 		game.Render();
+		game.RestartClock();
 	}
 
 	return 0;
